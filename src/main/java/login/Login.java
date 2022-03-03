@@ -23,13 +23,12 @@ public class Login extends HttpServlet {
 			throw new IOException();
 		}
 		
-		res.setContentType("text/html");
-		res.getWriter().println("dygydauydagdya");
-		
 		if(!inputUsername.equals(savedUser.getUsername())) {
 			if (!res.isCommitted()) {
 				res.sendError(400, "Nome de Usuário Inválido");
 				return;
+			} else { 
+				System.out.println("comprometido - username");
 			}
 		}
 		
